@@ -14,7 +14,7 @@ class App extends Component {
             {
                 id: 2,
                 title: 'Dinner with wife',
-                completed: true
+                completed: false
             },
             {
                 id: 3,
@@ -24,10 +24,20 @@ class App extends Component {
         ]
     }
 
+    // Toggle complete
+    markComplete = (id) => {
+        this.setState({ todos: this.state.todos.map(todo => {
+            if(todo.id === id) {
+                todo.completed = !todo.completed
+            }
+            return todo;
+            }) });
+    }
+
     render() {
         return (
             <div className="App">
-                <Todos todos={this.state.todos} />
+                <Todos todos={this.state.todos} markComplete={this.markComplete} />
             </div>
         );
     }
