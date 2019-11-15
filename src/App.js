@@ -46,10 +46,11 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                
-                <Header/>
-                <AddTodo/>
-                <Todos todos={this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo} />
+                <div className="container">
+                    <Header/>
+                    <AddTodo/>
+                    <Todos todos={this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo} />
+                </div>
             </div>
         );
     }
